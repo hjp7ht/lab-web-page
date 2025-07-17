@@ -98,13 +98,11 @@
       background:#fff; color:#333;
     }
 
-/* FLIP-CARD WRAPPER */
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
 }
 
-/* the thing that rotates */
 .flip-card-inner {
   display: grid;
   grid-template-areas: "stack";
@@ -139,7 +137,6 @@
   min-height: 100px; 
 }
 
-/* back face */
 .flip-card-back {
   background: #fff;
   color: #333;
@@ -431,13 +428,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-  // accordion “active” toggles (Goals & Terms)
   document.querySelectorAll('.accordion-collapse').forEach(el => {
     el.addEventListener('show.bs.collapse', () => el.closest('.accordion-item').classList.add('active'));
     el.addEventListener('hide.bs.collapse', () => el.closest('.accordion-item').classList.remove('active'));
   });
 
-  // flip-card toggle
   document.querySelectorAll('.flip-card-inner').forEach(inner => {
     inner.parentNode.addEventListener('click', () => {
       inner.classList.toggle('flipped');
@@ -446,12 +441,10 @@
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // 1) Measure every front face’s height:
     const fronts = Array.from(document.querySelectorAll('.flip-card-front'));
     const heights = fronts.map(f=> f.scrollHeight);
     const maxH = Math.max(...heights, 0);
 
-    // 2) Store it in a CSS variable for min-height:
     document.documentElement.style.setProperty('--funding-front-max', maxH + 'px');
   });
 </script>

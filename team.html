@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bioinformatics Core — Team</title>
+
+  <!-- Inter + Bootstrap + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary-color: rgba(38,34,98,1);
+      --nav-bg: #e6f0ff;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f8ff; color: #333;
+    }
+    .card { border:none; }
+
+    /* Navbar */
+    .navbar {
+      background: var(--nav-bg);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .brand-text {
+      color: var(--primary-color);
+      font-weight:600;
+      font-size: clamp(1rem,4vw,1.75rem);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .vertical-divider {
+      width:1px; background: var(--primary-color);
+      height: clamp(25px,3vw,40px);
+      margin:0 .75rem; flex-shrink:0;
+    }
+    .navbar-brand-logo {
+      height: clamp(30px,6vw,50px);
+      flex-shrink:0;
+    }
+    .nav-link {
+      color:#333 !important; font-weight:400 !important;
+      white-space: nowrap;
+    }
+    .nav-link.active {
+      color: var(--primary-color) !important;
+      border-bottom:2px solid var(--primary-color);
+    }
+
+    /* Page heading */
+    .page-title {
+      color: var(--primary-color);
+      text-align: left;
+      margin: 1.5rem 0;
+    }
+
+    /* Team cards: always row layout */
+    .team-card {
+      background:#fff;
+      border-radius:.5rem;
+      box-shadow:0 1px 4px rgba(0,0,0,0.1);
+      display:flex;
+      flex-direction: row;
+      overflow:hidden;
+      height:100%;
+    }
+
+    /* Photo: 40% of card width */
+    .member-photo {
+      width: 40%;
+      object-fit:cover;
+      border-top-left-radius:.5rem;
+      border-bottom-left-radius:.5rem;
+      /* remove top-right rounding, since we’re side-by-side */
+      border-top-right-radius:0;
+      border-bottom-right-radius:0;
+    }
+
+    /* Content: 60% */
+    .team-card-content {
+      width: 60%;
+      padding:1rem;
+      display:flex; flex-direction:column;
+    }
+
+    .team-card h5 {
+      color: var(--primary-color);
+      font-weight:600;
+      margin-bottom:0;
+    }
+    .role {
+      font-style:italic; color:#555; margin-left:.5rem;
+    }
+    .info-item {
+      display:flex; align-items:center; margin-top:.5rem;
+    }
+    .info-item i {
+      width:16px; text-align:center; margin-right:.5rem;
+      color: var(--primary-color);
+    }
+    .info-item a {
+      color: var(--primary-color); text-decoration:none;
+    }
+    .info-item a:hover {
+      text-decoration:underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container my-5">
+    <div class="card shadow-sm rounded">
+
+      <!-- Navbar: expands at XL -->
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <span class="brand-text">Bioinformatics Core</span>
+            <div class="vertical-divider"></div>
+            <img src="public/uva_primary_rgb.png" alt="UVA Logo" class="navbar-brand-logo"/>
+          </div>
+          <button class="navbar-toggler" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#mainNavbar"
+                  aria-controls="mainNavbar"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+            <ul class="navbar-nav flex-nowrap">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link active" href="team.html">Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page heading -->
+      <h2 class="page-title px-4">Team</h2>
+
+      <!-- Team grid -->
+      <div class="card-body px-4 py-3">
+        <div id="teamGrid" class="row gx-4 gy-4">
+          <!-- JS injected cards -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const members = [
+      {
+        name:'Pankaj Kumar, Ph.D.',
+        role:'Director',
+        department:'Research Assoc. Prof. of Biochemistry & Molecular Genetics',
+        email:'pk7z@virginia.edu',
+        contact:'(434) 982-2820',
+        address:'1312A Pinn Hall, Charlottesville, VA-22908',
+        google_scholar_profile:'https://scholar.google.com/citations?user=mbzMqpEAAAAJ&hl=en',
+        linkedin_profile:'https://www.linkedin.com/in/pankaj-kumar-8145b622/',
+        photo:'public/Attaway23-18-683x1024.webp'
+      },
+      {
+        name:'Anwaruddin Mohammad',
+        role:'Senior Analyst',
+        email:'xdh9bx@virginia.edu',
+        contact:'(434) 243-1679',
+        address:'1312 Pinn Hall, Charlottesville, VA-22908',
+        linkedin_profile:'https://www.linkedin.com/in/anwaruddin-mohammad-4470b01a/',
+        photo:'public/Attaway23-22-683x1024.webp'
+      },
+      {
+        name:'Guruprasad Konduru',
+        role:'Intermediate Analyst',
+        email:'vwe4zp@virginia.edu',
+        address:'1312 Pinn Hall, Charlottesville, VA-22908',
+        photo:'public/Attaway23-24-683x1024.webp'
+      },
+      {
+        name:'Sai Rohith Kota',
+        role:'Analyst, Developer',
+        email:'hjp7ht@virginia.edu',
+        address:'1312 Pinn Hall, Charlottesville, VA-22908',
+        linkedin_profile:'https://www.linkedin.com/in/sai-rohith-kota'
+      }
+    ];
+
+    const grid = document.getElementById('teamGrid');
+    members.forEach(member => {
+      const col = document.createElement('div');
+      col.className = 'col-xl-6 col-12';
+      col.innerHTML = `
+        <div class="team-card">
+          ${member.photo
+            ? `<img src="${member.photo}" class="member-photo img-fluid" alt="${member.name}">`
+            : ''}
+          <div class="team-card-content">
+            <h5>${member.name}</h5>
+            <span class="role">${member.role}</span>
+            ${member.department
+              ? `<div class="text-muted small mt-1">${member.department}</div>`
+              : ''}
+            ${member.email
+              ? `<div class="info-item">
+                   <i class="fas fa-envelope"></i>
+                   <a href="mailto:${member.email}">${member.email}</a>
+                 </div>`
+              : ''}
+            ${member.contact
+              ? `<div class="info-item"><i class="fas fa-phone"></i>${member.contact}</div>`
+              : ''}
+            ${member.address
+              ? `<div class="info-item"><i class="fas fa-map-marker-alt"></i>${member.address}</div>`
+              : ''}
+            ${member.google_scholar_profile
+              ? `<div class="info-item">
+                   <i class="fas fa-graduation-cap"></i>
+                   <a href="${member.google_scholar_profile}" target="_blank">Google Scholar</a>
+                 </div>`
+              : ''}
+            ${member.linkedin_profile
+              ? `<div class="info-item">
+                   <i class="fab fa-linkedin"></i>
+                   <a href="${member.linkedin_profile}" target="_blank">LinkedIn</a>
+                 </div>`
+              : ''}
+          </div>
+        </div>
+      `;
+      grid.appendChild(col);
+    });
+  </script>
+</body>
+</html>

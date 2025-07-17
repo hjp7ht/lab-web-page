@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bioinformatics Core — Publications</title>
+
+  <!-- Inter + Bootstrap + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary-color: rgba(38,34,98,1);
+      --nav-bg: #e6f0ff;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f8ff;
+      color: #333;
+    }
+    .card { border: none; }
+
+    /* Navbar (same as team.html) */
+    .navbar {
+      background: var(--nav-bg);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .brand-text {
+      color: var(--primary-color);
+      font-weight:600;
+      font-size: clamp(1rem,4vw,1.75rem);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .vertical-divider {
+      width:1px; background: var(--primary-color);
+      height: clamp(25px,3vw,40px);
+      margin:0 .75rem; flex-shrink:0;
+    }
+    .navbar-brand-logo {
+      height: clamp(30px,6vw,50px);
+      flex-shrink:0;
+    }
+    .nav-link {
+      color:#333 !important; font-weight:400 !important;
+      white-space: nowrap;
+    }
+    .nav-link.active {
+      color: var(--primary-color) !important;
+      border-bottom:2px solid var(--primary-color);
+    }
+
+    /* Page heading */
+    .page-title {
+      color: var(--primary-color);
+      text-align: left;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+
+    /* Separator */
+    .section-sep {
+      border: 0;
+      border-top: 1px solid #484747;
+      margin: 0.5rem 0 2rem 0;
+    }
+
+    /* Publication lists */
+    .publications-list,
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    .publications-list li,
+    .pub-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: .75rem;
+      line-height: 1.4;
+    }
+    .publications-list li::before,
+    .pub-list li::before {
+      content: "\f105"; /* fa-chevron-right */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0.15em;
+      color: #888;
+    }
+
+    /* Pankaj’s heading */
+    .pub-title {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: .75rem;
+    }
+    .pub-title i {
+      margin-left: .5rem;
+      transition: transform .3s;
+    }
+    .pub-title.collapsed i { transform: rotate(0deg); }
+    .pub-title:not(.collapsed) i { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+  <div class="container my-5">
+    <div class="card shadow-sm rounded">
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-xl">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <span class="brand-text">Bioinformatics Core</span>
+            <div class="vertical-divider"></div>
+            <img src="public/uva_primary_rgb.png" alt="UVA Logo" class="navbar-brand-logo"/>
+          </div>
+          <button class="navbar-toggler" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#mainNavbar"
+                  aria-controls="mainNavbar"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+            <ul class="navbar-nav flex-nowrap">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link active" href="publications.html">Publications</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page heading + separator -->
+      <h2 class="page-title px-4">Publications</h2>
+
+      <div class="card-body px-4 py-3">
+
+        <!-- Main Publications -->
+        <ul class="publications-list">
+          <li>Max O Meneveau, Rick D Vavolizza, Anwaruddin Mohammad, Pankaj Kumar, Joseph T Manderfield, Colleen Callahan, Kevin T Lynch, Tarek Abbas, Craig L Slingluff Jr, Stefan Bekiranov. A Step Toward Personalized Surgical Decision Making: Machine Learning Predicts One Versus Numerous Melanoma Lymph Node Metastases Using RNA-Sequencing. Annals of Surgery, 2022.</li>
+          <li>Yu Zhang, Caroline P Riedstra, Sarah Wang, Sonia Patel, Tobias Bald, Pankaj Kumar, Ali Rohani, David F Kashatus, Stergios J Moschos, Andrew C Dudley. Melanoma cells appropriate pericyte: endothelial cell crosstalk during perivascular invasion in the brain. bioRxiv, 2022.</li>
+          <li>Jamie L Null, Dae Joong Kim, James V McCann, Pankaj Kumar, Lincy Edatt, Chad V Pecot, Andrew C Dudley. Periostin+ stromal cells guide lymphovascular invasion by cancer cells. bioRxiv, 2022.</li>
+          <li>Parikh R*, Wilson B*, Marah L, Su Z,  Saha S,  Kumar P, Huang Fenix,  Dutta A. tRForest: a novel random forest-based algorithm for tRNA-derived fragment target prediction. NAR Genomics and Bioinformatics, 2022 Volume 4, Issue 2, June 2022, lqac037.</li>
+          <li>Simpson M, Frisbee A, Kumar P, Schwan C, Aktories K, Petri WA. Clostridioides difficile Binary Toxin Is Recognized by the Toll-Like Receptor 2/6 Heterodimer to Induce a Nuclear Factor-κB Response. J Infect Dis. 2022 Apr 1;225(7):1296-1300. doi: 10.1093/infdis/jiaa620. PubMed PMID: 33011801; PubMed Central PMCID: PMC8974845. Cited 3 times, IF = 5.226, Rank 56 of 162 in IMMUNOLOGY journals.</li>
+          <li>Meneveau MO, Kumar P, Lynch KT, Patel SP, Slingluff CL. The vaccine-site microenvironment: impacts of antigen, adjuvant, and same-site vaccination on antigen presentation and immune signaling. J Immunother Cancer. 2022 Mar;10(3). doi: 10.1136/jitc-2021-003533. PubMed PMID: 35277457; PubMed Central PMCID: PMC8919469. Cited 0 times, IF = 13.751, Rank 8 of 162 in IMMUNOLOGY journals.</li>
+          <li>Uddin MJ, Leslie JL, Burgess SL, Oakland N, Thompson B, Abhyankar M, Revilla J, Frisbee A, Donlan AN, Kumar P, Petri WA Jr. The IL-33-ILC2 pathway protects from amebic colitis. Mucosal Immunol. 2022 Jan;15(1):165-175. doi: 10.1038/s41385-021-00442-2. Epub 2021 Aug 16. PubMed PMID: 34400793; PubMed Central PMCID: PMC8732277. Cited 3 times, IF = 7.313, Rank 30 of 162 in IMMUNOLOGY journals.</li>
+        </ul>
+      <hr class="section-sep px-4"/>
+
+
+        <div>
+          <div class="pub-title collapsed"
+               data-bs-toggle="collapse"
+               data-bs-target="#pankajPubs"
+               aria-expanded="false">
+            Pankaj Kumar’s Publications
+            <i class="fas fa-chevron-down"></i>
+          </div>
+
+          <ul id="pankajPubs" class="pub-list collapse">
+            <!-- <li>Kumar P., et al. “Advanced Bioinformatics Methods,” <em>Bioinformatics</em>, 2025.</li>
+            <li>Kumar P., et al. “Transcriptome Profiling Techniques,” <em>Journal of Molecular Biology</em>, 2024.</li>
+            <li>Kumar P., et al. “Proteomic Data Mining,” <em>Proteomics</em>, 2023.</li> -->
+            <li>Seegren, P. V., Harper, L. R., Downs, T. K., Zhao, X. -Y., Viswanathan, S. B., Stremska, M. E., . . . Desai, B. N. (2023). Reduced mitochondrial calcium uptake in macrophages is a major driver of inflammaging. NATURE AGING, 3(7), 796-+.</li>
+            <!-- <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li> -->
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + toggle script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const pubTitle = document.querySelector('.pub-title');
+    const collapseEl = document.getElementById('pankajPubs');
+    collapseEl.addEventListener('show.bs.collapse', () => pubTitle.classList.remove('collapsed'));
+    collapseEl.addEventListener('hide.bs.collapse', () => pubTitle.classList.add('collapsed'));
+  </script>
+</body>
+</html>
